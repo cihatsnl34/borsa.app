@@ -1,0 +1,10 @@
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csprojAssemblyReference.cache
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Properties.Resources.resources
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csproj.GenerateResource.cache
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csproj.CoreCompileInputs.cache
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.exe.config
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.exe
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.pdb
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.exe
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.pdb
+C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form1.resources
