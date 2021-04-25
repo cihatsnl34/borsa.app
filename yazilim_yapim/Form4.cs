@@ -21,19 +21,29 @@ namespace yazilim_yapim
         {
             InitializeComponent();
         }
+        public void verilerigöster(string veriler)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(veriler, baglan);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
 
+            dataGridView1.DataSource = ds.Tables[0];
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Form1 form1 = new Form1();
             baglan.Open();
-            string select = "Select * from kullanicii";
-            SqlDataAdapter da = new SqlDataAdapter(select, baglan);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            baglan.Close();
+            
+            verilerigöster("Select * from kullanicii WHERE kullanici_rol='s'");
             
             
+            
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
