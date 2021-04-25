@@ -8,3 +8,16 @@ C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim
 C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.exe
 C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.pdb
 C:\Users\cihat\OneDrive\Masaüstü\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form1.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.exe.config
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.exe
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\bin\Debug\yazilim_yapim.pdb
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csprojAssemblyReference.cache
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form1.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Properties.Resources.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csproj.GenerateResource.cache
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.csproj.CoreCompileInputs.cache
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.exe
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.pdb
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form2.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form3.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form4.resources

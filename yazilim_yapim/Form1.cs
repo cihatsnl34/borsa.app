@@ -16,6 +16,9 @@ namespace yazilim_yapim
     {   //Veri tabanı bağlama
         SqlConnection baglan = new SqlConnection("Data Source=DESKTOP-0GKB0TH;Initial Catalog=borsa;Integrated Security=True");
         //----------------------------------------------------------------
+        public string kullanici_ad;
+        public string kullanici_password;
+        public string kullanici_rol;
         public Form1()
         {
 
@@ -33,89 +36,60 @@ namespace yazilim_yapim
             
             string username = textBox1.Text;
             string pass = textBox2.Text;
- 
-                if (radioButton1.Checked) // admin giriş
-
-                {
                 if (username != "" && pass != "")
                 {
-
-                    while (reader.Read())
+               
+                while (reader.Read())
                     {
-                        string kullanici_ad = reader["kullanici_ad"].ToString();
-                        string kullanici_password = reader["kullanici_password"].ToString();
-                        string kullanici_rol = reader["kullanici_rol"].ToString();
-                        if (username == kullanici_ad && pass == kullanici_password && kullanici_rol=="admin") // veriler veri tabınından çekilecek.
+                         kullanici_ad = reader["kullanici_ad"].ToString();
+                         kullanici_password = reader["kullanici_password"].ToString();
+                         kullanici_rol = reader["kullanici_rol"].ToString();
+                        if (username == kullanici_ad && pass == kullanici_password && kullanici_rol=="m"&&radioButton1.Checked) // veriler veri tabınından çekilecek.
                         {
                             MessageBox.Show("Admin Paneline Yöneliyorsunuz...");
+                            label4.Text = "Giriş Yapıldı...";
+                            Form4 form4 = new Form4();
+                            this.Hide();
+                            form4.Show();
+                            break;
+                            
                         }
-                        else
+                       else if (username == kullanici_ad && pass == kullanici_password && kullanici_rol == "a" && radioButton2.Checked) // veriler veri tabınından çekilecek.
                         {
-                            MessageBox.Show("Yanlış Kullanıcı adı ya da şifre admin şifresi ile uyuşmuyor");
+                            MessageBox.Show("alici Paneline Yöneliyorsunuz...");
+                            label4.Text = "Giriş Yapıldı...";
+                            break;
 
                         }
-                    }
-                }
+                       else if (username == kullanici_ad && pass == kullanici_password && kullanici_rol == "s" && radioButton3.Checked) // veriler veri tabınından çekilecek.
+                        {
+                            MessageBox.Show("satici Paneline Yöneliyorsunuz...");
+                            label4.Text = "Giriş Yapıldı...";
+                            Form3 form3 = new Form3();
+                            form3.Show();
+                            this.Hide();
+                            break;
 
-                else
-                {
-                    MessageBox.Show("Kullanıcı adı ve ya parola boş bırakılamaz.....");
-                }
-                }
-                else if (radioButton2.Checked) // Alıcı giriş
-                {
-                if (username != "" && pass != "")
-                {
-                    while (reader.Read())
+                        }
+                    else
                     {
-                        string kullanici_ad = reader["kullanici_ad"].ToString();
-                        string kullanici_password = reader["kullanici_password"].ToString();
-                        string kullanici_rol = reader["kullanici_rol"].ToString();
-
-                        if (username == kullanici_ad && pass == kullanici_password && kullanici_rol == "alici") // veriler veri tabınından çekilecek.
-                        {
-                            MessageBox.Show("Alıcı Paneline Yöneliyorsunuz...");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Yanlış Kullanıcı adı ya da şifre.....");
-                        }
+                        label4.Text = "KULLANICI ADI VE YA ŞİFRE YA DA ROL YANLIŞTIR...";
                     }
+                }
                 }
                 else
                 {
                     MessageBox.Show("Kullanıcı adı ve ya parola boş bırakılamaz.....");
-                }
-                }
-                else if (radioButton3.Checked) // Satici giriş
-                {
-                if (username != "" && pass != "")
-                {
-                    while (reader.Read())
-                    {
-                        string kullanici_ad = reader["kullanici_ad"].ToString();
-                        string kullanici_password = reader["kullanici_password"].ToString();
-                        string kullanici_rol = reader["kullanici_rol"].ToString();
-                        if (username == kullanici_ad && pass == kullanici_password && kullanici_rol == "satici") // veriler veri tabınından çekilecek.
-                        {
-                            MessageBox.Show("Satıcı Yöneliyorsunuz...");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Yanlış Kullanıcı adı ya da şifre.....");
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Kullanıcı adı ve ya parola boş bırakılamaz.....");
-                }
-                }
-               
-            
-            baglan.Close();
+                }  
+                baglan.Close();
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.Show();
+
+        }
     }
 }
