@@ -21,3 +21,6 @@ C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.pdb
 C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form2.resources
 C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form3.resources
 C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form4.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.Form5.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.aliciEkran.resources
+C:\Users\cihat\yazilim_yapim\yazilim_yapim\obj\Debug\yazilim_yapim.saticiEkran.resources

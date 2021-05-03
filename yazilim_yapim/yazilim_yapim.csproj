@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aliciEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aliciEkran.Designer.cs">
+      <DependentUpon>aliciEkran.cs</DependentUpon>
+    </Compile>
     <Compile Include="borsaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,8 +81,23 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="saticiEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="saticiEkran.Designer.cs">
+      <DependentUpon>saticiEkran.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="aliciEkran.resx">
+      <DependentUpon>aliciEkran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +110,9 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +122,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="saticiEkran.resx">
+      <DependentUpon>saticiEkran.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="borsaDataSet.xsc">
       <DependentUpon>borsaDataSet.xsd</DependentUpon>
     </None>

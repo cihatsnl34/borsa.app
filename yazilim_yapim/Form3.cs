@@ -31,6 +31,14 @@ namespace yazilim_yapim
             
         }
         public string s1, s2, s3, s4, s5, s6, s7, s8;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            saticiEkran satici1 = new saticiEkran();
+            satici1.Show();
+            this.Hide();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             baglan.Open();
@@ -68,6 +76,7 @@ namespace yazilim_yapim
             textBox2.Clear();
             textBox3.Clear();
             MessageBox.Show("Ürün eklendi");
+            
             baglan.Close();
 
         }

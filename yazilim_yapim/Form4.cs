@@ -116,6 +116,68 @@ namespace yazilim_yapim
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtaliciId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            baglan.Open();
+            verilerigöster("Select * from alici");
+            baglan.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            baglan.Open();
+            verilerigöstersoyut("Select * from aliciSoyut ");
+            baglan.Close();
+        }
+
+        private void alici_onay_Click(object sender, EventArgs e)
+        {
+            baglan.Open();
+
+
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                string ekle = "insert into alici(alici_ad,alici_soyad,alici_kullaniciad,alici_password,alici_tc,alici_tel,alici_email,alici_adres,alici_para) values" +
+         " (@alici_ad,@alici_soyad,@alici_kullaniciad,@alici_password,@alici_tc,@alici_tel,@alici_email,@alici_adres,@para)";
+                SqlCommand komut = new SqlCommand(ekle, baglan);
+                komut.Parameters.AddWithValue("@alici_ad", dataGridView1.Rows[i].Cells[1].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_soyad", dataGridView1.Rows[i].Cells[2].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_kullaniciad", dataGridView1.Rows[i].Cells[3].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_password", dataGridView1.Rows[i].Cells[4].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_tc", dataGridView1.Rows[i].Cells[5].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_tel", dataGridView1.Rows[i].Cells[6].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_email", dataGridView1.Rows[i].Cells[7].Value.ToString());
+                komut.Parameters.AddWithValue("@alici_adres", dataGridView1.Rows[i].Cells[8].Value.ToString());
+                komut.Parameters.AddWithValue("@para", dataGridView1.Rows[i].Cells[9].Value.ToString());
+                komut.ExecuteNonQuery();
+
+            }
+            string sorgu = "delete from aliciSoyut ";
+            SqlCommand komut1 = new SqlCommand(sorgu, baglan);
+            komut1.ExecuteNonQuery();
+            verilerigöstersoyut("Select * from aliciSoyut ");
+            baglan.Close();
+        }
+
+        private void alici_sil_Click(object sender, EventArgs e)
+        {
+            string sorgu = "delete from aliciSoyut where aliciS_id=@aliciS_id";
+            SqlCommand komut = new SqlCommand(sorgu, baglan);
+            komut.Parameters.AddWithValue("@aliciS_id", Convert.ToInt32(txtaliciId.Text));
+            baglan.Open();
+            komut.ExecuteNonQuery();
+            verilerigöstersoyut("Select * from aliciSoyut ");
+            baglan.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

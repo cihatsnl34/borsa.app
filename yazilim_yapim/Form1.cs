@@ -26,7 +26,7 @@ namespace yazilim_yapim
 
         }
 
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -58,6 +58,9 @@ namespace yazilim_yapim
                         {
                             MessageBox.Show("alici Paneline Yöneliyorsunuz...");
                             label4.Text = "Giriş Yapıldı...";
+                            aliciEkran alici = new aliciEkran();
+                            alici.Show();
+                            this.Hide();
                             break;
 
                         }
@@ -65,8 +68,8 @@ namespace yazilim_yapim
                         {
                             MessageBox.Show("satici Paneline Yöneliyorsunuz...");
                             label4.Text = "Giriş Yapıldı...";
-                            Form3 form3 = new Form3();
-                            form3.Show();
+                            saticiEkran satici = new saticiEkran();
+                            satici.Show();
                             this.Hide();
                             break;
 

@@ -41,6 +41,11 @@ namespace yazilim_yapim
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.alici_onay = new System.Windows.Forms.Button();
+            this.alici_sil = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtaliciId = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borsaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borsaDataSetBindingSource)).BeginInit();
@@ -97,6 +102,7 @@ namespace yazilim_yapim
             this.button3.TabIndex = 3;
             this.button3.Text = "Alıcı listele";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -106,6 +112,7 @@ namespace yazilim_yapim
             this.button4.TabIndex = 4;
             this.button4.Text = "Alıcı Para Güncelle ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -143,11 +150,62 @@ namespace yazilim_yapim
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 8;
             // 
+            // alici_onay
+            // 
+            this.alici_onay.Location = new System.Drawing.Point(181, 186);
+            this.alici_onay.Name = "alici_onay";
+            this.alici_onay.Size = new System.Drawing.Size(102, 42);
+            this.alici_onay.TabIndex = 9;
+            this.alici_onay.Text = "ONAYLA ALICI";
+            this.alici_onay.UseVisualStyleBackColor = true;
+            this.alici_onay.Click += new System.EventHandler(this.alici_onay_Click);
+            // 
+            // alici_sil
+            // 
+            this.alici_sil.Location = new System.Drawing.Point(307, 187);
+            this.alici_sil.Name = "alici_sil";
+            this.alici_sil.Size = new System.Drawing.Size(92, 41);
+            this.alici_sil.TabIndex = 10;
+            this.alici_sil.Text = "SİL ALICI";
+            this.alici_sil.UseVisualStyleBackColor = true;
+            this.alici_sil.Click += new System.EventHandler(this.alici_sil_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(185, 257);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Alıcı Id :";
+            // 
+            // txtaliciId
+            // 
+            this.txtaliciId.Location = new System.Drawing.Point(235, 254);
+            this.txtaliciId.Name = "txtaliciId";
+            this.txtaliciId.Size = new System.Drawing.Size(72, 20);
+            this.txtaliciId.TabIndex = 12;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(14, 130);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(137, 23);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Çıkış Yap";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.txtaliciId);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.alici_sil);
+            this.Controls.Add(this.alici_onay);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
@@ -181,5 +239,10 @@ namespace yazilim_yapim
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button alici_onay;
+        private System.Windows.Forms.Button alici_sil;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtaliciId;
+        private System.Windows.Forms.Button button7;
     }
 }
