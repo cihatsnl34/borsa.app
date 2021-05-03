@@ -64,6 +64,10 @@ namespace yazilim_yapim
             komut.Parameters.AddWithValue("@urun_miktari", textBox2.Text);
             komut.Parameters.AddWithValue("@urun_fiyati", textBox3.Text);
             komut.ExecuteNonQuery();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            MessageBox.Show("Ürün eklendi");
             baglan.Close();
 
         }

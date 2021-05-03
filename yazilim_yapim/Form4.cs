@@ -87,9 +87,35 @@ namespace yazilim_yapim
                     komut.ExecuteNonQuery();
                 
             }
+            string sorgu = "delete from saticiSoyut ";
+            SqlCommand komut1 = new SqlCommand(sorgu, baglan);
+            komut1.ExecuteNonQuery();
+            verilerigöstersoyut("Select * from saticiSoyut ");
             baglan.Close();
 
 
+        }
+        
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string sorgu = "delete from saticiSoyut where saticiS_id=@saticiS_id";
+           SqlCommand komut = new SqlCommand(sorgu, baglan);
+            komut.Parameters.AddWithValue("@saticiS_id", Convert.ToInt32(txtId.Text));
+            baglan.Open();
+            komut.ExecuteNonQuery();
+            verilerigöstersoyut("Select * from saticiSoyut ");
+            baglan.Close();
+            //baglan.Open();
+            //SqlCommand komut = new SqlCommand("Delete From saticiSoyut where saticiS_id=("+id +")",baglan);
+            //komut.ExecuteNonQuery();
+            //baglan.Close();
+        }
+
+       
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }
