@@ -19,6 +19,8 @@ namespace yazilim_yapim
         public string kullanici_ad;
         public string kullanici_password;
         public string kullanici_rol;
+        public string aliciad;
+      
         public Form1()
         {
 
@@ -33,7 +35,7 @@ namespace yazilim_yapim
             baglan.Open();
             SqlCommand command = new SqlCommand("Select * from kullanicii", baglan);
             SqlDataReader reader = command.ExecuteReader();
-            
+             
             string username = textBox1.Text;
             string pass = textBox2.Text;
                 if (username != "" && pass != "")
@@ -48,6 +50,7 @@ namespace yazilim_yapim
                         {
                             MessageBox.Show("Admin Paneline Yöneliyorsunuz...");
                             label4.Text = "Giriş Yapıldı...";
+                            reader.Close();
                             Form4 form4 = new Form4();
                             this.Hide();
                             form4.Show();
@@ -56,11 +59,16 @@ namespace yazilim_yapim
                         }
                        else if (username == kullanici_ad && pass == kullanici_password && kullanici_rol == "a" && radioButton2.Checked) // veriler veri tabınından çekilecek.
                         {
-                            MessageBox.Show("alici Paneline Yöneliyorsunuz...");
+
+                        
+                             MessageBox.Show("alici Paneline Yöneliyorsunuz...");
+                            reader.Close();
                             label4.Text = "Giriş Yapıldı...";
                             aliciEkran alici = new aliciEkran();
+                            alici.label4.Text = kullanici_ad;
                             alici.Show();
                             this.Hide();
+                           
                             break;
 
                         }
@@ -68,7 +76,9 @@ namespace yazilim_yapim
                         {
                             MessageBox.Show("satici Paneline Yöneliyorsunuz...");
                             label4.Text = "Giriş Yapıldı...";
+                            reader.Close();
                             saticiEkran satici = new saticiEkran();
+                            satici.label1.Text = kullanici_ad;
                             satici.Show();
                             this.Hide();
                             break;
@@ -83,15 +93,22 @@ namespace yazilim_yapim
                 else
                 {
                     MessageBox.Show("Kullanıcı adı ve ya parola boş bırakılamaz.....");
-                }  
+                }
+           
                 baglan.Close();
         }
-
+       
+        
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             this.Hide();
             form2.Show();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

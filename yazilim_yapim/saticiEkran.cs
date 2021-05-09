@@ -20,19 +20,17 @@ namespace yazilim_yapim
         //Veri tabanı bağlama
         SqlConnection baglan = new SqlConnection("Data Source=DESKTOP-0GKB0TH;Initial Catalog=borsa;Integrated Security=True");
         //----------------------------------------------------------------
-        public void verilerigöster(string veriler)
-        {
-            SqlDataAdapter da = new SqlDataAdapter(veriler, baglan);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-
-            dataGridView1.DataSource = ds.Tables[0];
-
-        }
+        public string kullaniciad;
+       
         private void saticiEkran_Load(object sender, EventArgs e)
         {
             baglan.Open();
-            verilerigöster("Select satici_ad,satici_soyad,satici_ürünad,satici_ürünfiyat from satici");
+            Form1 form1 = new Form1();
+            kullaniciad = label1.Text;
+            MessageBox.Show(label1.Text);
+
+            verilerigöster("Select satici_ad,satici_soyad,satici_ürünad,satici_ürünmiktar,satici_ürünfiyat from satici");
+
             baglan.Close();
         }
 
@@ -48,6 +46,16 @@ namespace yazilim_yapim
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+        public void verilerigöster(string veriler)
+        {
+            
+            SqlDataAdapter da = new SqlDataAdapter(veriler, baglan);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dataGridView1.DataSource = ds.Tables[0];
+
         }
     }
 }
