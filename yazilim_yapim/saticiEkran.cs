@@ -24,10 +24,11 @@ namespace yazilim_yapim
        
         private void saticiEkran_Load(object sender, EventArgs e)
         {
+            label1.Visible = false;
             baglan.Open();
             Form1 form1 = new Form1();
             kullaniciad = label1.Text;
-            MessageBox.Show(label1.Text);
+            
 
             verilerigöster("Select satici_ad,satici_soyad,satici_ürünad,satici_ürünmiktar,satici_ürünfiyat from satici");
 

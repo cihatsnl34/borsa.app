@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections;
 
+
 namespace yazilim_yapim
 {
     public partial class Form1 : Form

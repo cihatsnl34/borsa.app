@@ -15,7 +15,7 @@ namespace yazilim_yapim
     {
         Form1 form1 = new Form1();
         public string saticiadi,aliciadi,kullanici_ad;
-        public int urunfiyat,istegimiktar,alicipara,saticiid,uruntoplamfiat,uruntoplam,aliciSonPara,aliciId;
+        public int urunfiyat,istegimiktar,alicipara,saticiid,uruntoplamfiat,uruntoplam,aliciSonPara,aliciId,saticiPara;
         public aliciEkran()
         {
             InitializeComponent();
@@ -35,6 +35,9 @@ namespace yazilim_yapim
         
         private void aliciEkran_Load(object sender, EventArgs e)
         {
+            label4.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
             baglan.Open();
             kullanici_ad = label4.Text;
             MessageBox.Show(kullanici_ad);
@@ -53,7 +56,8 @@ namespace yazilim_yapim
                 }   
                
             }
-          
+            
+
             baglan.Close();
             
             saticiadi= dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -84,10 +88,26 @@ namespace yazilim_yapim
             uruntoplam =int.Parse( textBox2.Text )- int.Parse( textBox3.Text);
             uruntoplam.ToString();
             
+            
             saticiid = int.Parse(textBox4.Text);
+            //SqlCommand command1 = new SqlCommand("Select * from satici ", baglan);
+            //SqlDataReader reader1 = command1.ExecuteReader();
+            //while (reader1.Read())
+            //{
+            //    if (reader1["satici_id"].ToString() == saticiid.ToString())
+            //    {
+
+
+            //        saticiPara = int.Parse(reader1["satici_para"].ToString());
+
+            //    }
+
+            //}
+            //reader1.Close();
+            //urunfiyat += saticiPara;
             if (int.Parse(textBox3.Text) <= int.Parse(textBox2.Text))
             {
-                if (alicipara>=int.Parse(textBox2.Text)*urunfiyat)
+                if (alicipara>=int.Parse(textBox3.Text)*urunfiyat)
                 {
                     cmd = new SqlCommand("update satici set satici_para=@urunfiyat,satici_ürünmiktar=@uruntoplam where satici_id=@saticiid", baglan);
                     
@@ -108,12 +128,15 @@ namespace yazilim_yapim
                     cm.Parameters.AddWithValue("@saticiid", saticiid);
                     cm.Parameters.AddWithValue("@urunfiyat", urunfiyat.ToString());
                     cm.ExecuteNonQuery();
+                    MessageBox.Show(urunfiyat.ToString());
                     baglan.Close();
                 }
                 
                 else
                 {
-                    MessageBox.Show("mık fakiri");
+                    MessageBox.Show("Paranız yetersizdir...");
+                    MessageBox.Show(urunfiyat.ToString());
+
                 }
 
             }
